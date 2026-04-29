@@ -23,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 80%;
+  font-size: 88%;
 }
 
 body {
@@ -143,7 +143,7 @@ h3 {
 
 .hero-subcopy {
   max-width: 32rem;
-  font-size: clamp(1.45rem, 2.8vw, 2.15rem);
+  font-size: clamp(1.72rem, 3.2vw, 2.55rem);
   line-height: 1.28;
   margin-top: 1.35rem;
   animation: hero-sub-fade 1200ms ease 2050ms both;
@@ -374,6 +374,11 @@ h3 {
   gap: 1rem;
 }
 
+.contact-form-stack label {
+  font-size: 1.55rem;
+  line-height: 1.35;
+}
+
 .van-gogh-input::placeholder {
   color: rgba(226, 232, 240, 0.5);
 }
@@ -383,6 +388,13 @@ h3 {
   border-color: rgba(255, 235, 177, 0.38);
   box-shadow: 0 0 0 4px rgba(255, 235, 177, 0.08);
   background: rgba(12, 21, 40, 0.9);
+}
+
+.contact-form-card .van-gogh-input,
+.contact-form-card .van-gogh-input::placeholder,
+.contact-form-card .van-gogh-button {
+  font-size: 1.55rem;
+  line-height: 1.42;
 }
 
 .service-card {
@@ -400,9 +412,65 @@ h3 {
   transform: translateY(0);
 }
 
+.service-carousel {
+  width: min(52rem, 100%);
+}
+
+.service-carousel-progress {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.15rem;
+}
+
+.service-carousel-dot {
+  width: 2.5rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background-color 260ms ease, transform 260ms ease;
+}
+
+.service-carousel-dot.is-active {
+  background: rgba(255, 232, 170, 0.88);
+  transform: scaleX(1.18);
+  transform-origin: left center;
+}
+
+.service-carousel-card {
+  min-height: 26rem;
+  padding: 2.35rem;
+}
+
+.service-carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.service-carousel-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-carousel-index {
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .service-description {
   font-size: 1.02rem;
   line-height: 1.62;
+}
+
+.service-carousel-description {
+  max-width: 43rem;
+  font-size: 1.55rem;
+  line-height: 1.42;
 }
 
 .service-divider {
@@ -416,6 +484,12 @@ h3 {
   font-size: 0.95rem;
   line-height: 1.55;
   text-wrap: pretty;
+}
+
+.service-carousel-features {
+  font-size: 1.55rem;
+  line-height: 1.42;
+  font-weight: 600;
 }
 
 .service-dot {
@@ -565,7 +639,7 @@ h3 {
 
   .hero-subcopy {
     max-width: 28rem;
-    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+    font-size: clamp(1.35rem, 2.45vw, 1.95rem);
     line-height: 1.22;
   }
 
@@ -605,6 +679,19 @@ h3 {
     gap: 1rem;
   }
 
+  .service-carousel {
+    width: min(48rem, 100%);
+  }
+
+  .service-carousel-card {
+    min-height: 23rem;
+    padding: 1.8rem;
+  }
+
+  .service-carousel-title-row h3 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem) !important;
+  }
+
   .van-gogh-card {
     border-radius: 24px;
     padding: 1.5rem;
@@ -620,6 +707,11 @@ h3 {
     line-height: 1.52;
   }
 
+  .service-carousel-description {
+    font-size: 1.3rem;
+    line-height: 1.45;
+  }
+
   .service-divider {
     margin: 0.85rem 0 0.8rem;
   }
@@ -627,6 +719,12 @@ h3 {
   .service-features {
     font-size: 0.88rem;
     line-height: 1.48;
+  }
+
+  .service-carousel-features {
+    font-size: 1.3rem;
+    line-height: 1.45;
+    font-weight: 600;
   }
 
   .contact-form-card {
@@ -637,8 +735,20 @@ h3 {
     gap: 0.85rem;
   }
 
+  .contact-form-stack label {
+    font-size: 1.3rem;
+    line-height: 1.35;
+  }
+
   .van-gogh-input {
     padding: 0.68rem 0.85rem;
+  }
+
+  .contact-form-card .van-gogh-input,
+  .contact-form-card .van-gogh-input::placeholder,
+  .contact-form-card .van-gogh-button {
+    font-size: 1.3rem;
+    line-height: 1.4;
   }
 }
 
@@ -666,6 +776,30 @@ h3 {
     margin-left: 0;
     min-height: auto;
     padding-top: 10rem;
+  }
+
+  .service-carousel-progress {
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .service-carousel-dot {
+    width: 1.7rem;
+  }
+
+  .service-carousel-card {
+    min-height: auto;
+    padding: 1.4rem;
+  }
+
+  .service-carousel-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-carousel-title-row {
+    align-items: flex-start;
   }
 
   .contact-layout {

@@ -75,6 +75,17 @@ export const Services: React.FC<ServicesProps> = ({ scrollY }) => {
       ],
     },
   ];
+  const carouselStart = servicesStart + viewportHeight * 0.28;
+  const carouselEnd = servicesFadeStart - viewportHeight * 0.04;
+  const carouselProgress = Math.max(
+    0,
+    Math.min(0.999, (scrollY - carouselStart) / Math.max(1, carouselEnd - carouselStart))
+  );
+  const activeIndex = Math.min(
+    services.length - 1,
+    Math.floor(carouselProgress * services.length)
+  );
+  const activeService = services[activeIndex];
 
   return (
     <div
@@ -96,24 +107,37 @@ export const Services: React.FC<ServicesProps> = ({ scrollY }) => {
             Sharpen the Signal
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {services.map((service, index) => (
-              <article
-                key={service.title}
-                className="service-card van-gogh-card is-visible"
-                style={{ transitionDelay: `${index * 120}ms` }}
-              >
-                <div className="flex items-center gap-4 mb-5">
-                  <service.icon className="w-11 h-11 text-amber-200 flex-shrink-0" />
-                  <h3 className="text-2xl text-stone-50 service-title">{service.title}</h3>
+          <div className="service-carousel">
+            <div className="service-carousel-progress" aria-hidden="true">
+              {services.map((service, index) => (
+                <span
+                  key={service.title}
+                  className={`service-carousel-dot${index === activeIndex ? ' is-active' : ''}`}
+                />
+              ))}
+            </div>
+
+            <article key={activeService.title} className="service-carousel-card van-gogh-card">
+              <div className="service-carousel-header">
+                <div className="service-carousel-title-row">
+                  <activeService.icon className="w-12 h-12 text-amber-200 flex-shrink-0" />
+                  <h3 className="text-[2rem] md:text-[2.7rem] text-stone-50 service-title">
+                    {activeService.title}
+                  </h3>
                 </div>
-                <p className="service-description text-slate-300">{service.description}</p>
-                <div className="service-divider" />
-                <p className="service-features text-slate-200/90">
-                  {service.features.join('  •  ')}
+                <p className="service-carousel-index text-amber-100/80">
+                  {String(activeIndex + 1).padStart(2, '0')} / {String(services.length).padStart(2, '0')}
                 </p>
-              </article>
-            ))}
+              </div>
+
+              <p className="service-description service-carousel-description text-slate-200/90">
+                {activeService.description}
+              </p>
+              <div className="service-divider" />
+              <p className="service-features service-carousel-features text-slate-200/90">
+                {activeService.features.join('  •  ')}
+              </p>
+            </article>
           </div>
         </div>
       </div>

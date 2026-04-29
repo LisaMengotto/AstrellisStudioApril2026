@@ -61,7 +61,7 @@ export const About: React.FC<AboutProps> = ({ scrollY }) => {
       >
         <div className="story-cloud" />
           <p className="display-kicker text-stone-200 mb-4">Approach</p>
-          <h2 className="text-[2rem] md:text-[3rem] font-semibold text-stone-50 mb-8 tracking-tight">
+          <h2 className="text-[1.7rem] md:text-[2.45rem] font-semibold text-stone-50 mb-8 tracking-tight">
             The Astrellis Method
           </h2>
 
@@ -70,10 +70,10 @@ export const About: React.FC<AboutProps> = ({ scrollY }) => {
               <article key={pillar.number} className="story-step">
                 <p className="story-step-number">{pillar.number}</p>
                 <div>
-                  <h2 className="text-3xl md:text-4xl text-stone-50 mb-2">
+                  <h2 className="text-[2rem] md:text-[2.65rem] text-stone-50 mb-2">
                     {pillar.title}
                   </h2>
-                  <p className="text-2xl md:text-3xl text-stone-200 leading-tight">
+                  <p className="text-[1.55rem] md:text-[2.1rem] text-stone-200 leading-tight">
                     {pillar.description}
                   </p>
                 </div>
