@@ -50,7 +50,7 @@ textarea {
 
 .display-kicker {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -625,7 +625,7 @@ h3 {
 
 @media (max-width: 1280px), (max-height: 860px) {
   .display-kicker {
-    font-size: 0.72rem;
+    font-size: 0.88rem;
     letter-spacing: 0.24em;
   }
 
