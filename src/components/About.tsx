@@ -61,7 +61,7 @@ export const About: React.FC<AboutProps> = ({ scrollY }) => {
       >
         <div className="story-cloud" />
           <p className="display-kicker text-stone-200 mb-4">Approach</p>
-          <h2 className="text-[1.7rem] md:text-[2.45rem] font-semibold text-stone-50 mb-8 tracking-tight">
+          <h2 className="text-[2rem] md:text-[3rem] font-semibold text-stone-50 mb-8 tracking-tight">
             The Astrellis Method
           </h2>
 
